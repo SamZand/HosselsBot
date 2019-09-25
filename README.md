@@ -1,0 +1,2 @@
+# HosselsBot
+Simple HosselsBot (WIP)
