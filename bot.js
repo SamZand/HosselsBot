@@ -45,7 +45,7 @@ function pingCommand(arguments, message) {
 }
 
 async function sub(arguments, message) {
-  
+
   client.user.setActivity("with Reddit")
   let args = arguments;
 
@@ -63,9 +63,7 @@ async function sub(arguments, message) {
           );
         } else {
           res = await axios.get(
-            `https://www.reddit.com/r/${args[0]}/top.json?limit=${
-                args[1]
-              }&sort=new`
+            `https://www.reddit.com/r/${args[0]}/top.json?limit=1&sort=new`
           );
         }
 
