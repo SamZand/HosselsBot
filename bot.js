@@ -111,7 +111,7 @@ function dice(arguments, message) {
     }
     return;
   } else {
-    message.reply("vind je meer dan" + maxSize + "dobbelstenen niet wat onnodig?");
+    message.reply("vind je meer dan " + maxSize + " dobbelstenen niet wat onnodig?");
     return;
   }
 }
