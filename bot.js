@@ -35,6 +35,9 @@ function processCommand(message) {
   if (primaryCommand === 'sub') {
     sub(arguments, message)
   }
+  if (primaryCommand === 'd') {
+    dice(arguments, message);
+  }
 }
 
 function pingCommand(arguments, message) {
@@ -91,6 +94,31 @@ async function sub(arguments, message) {
       message.reply("No subreddits named `" + message + "` :confused:");
     }
   }
+}
+
+function dice(arguments, message) {
+  let args = arguments.split(" ");
+  let size = args[0];
+  let maxSize = 10;
+  let amount = args[1];
+
+  if (!amount) {
+    message.reply(rollDie(size));
+    return;
+  } else if (amount <= maxSize) {
+    for (let i = 0; i < amount; i++) {
+      message.reply(rollDie(size));
+    }
+    return;
+  } else {
+    message.reply("vind je meer dan" + maxSize + "dobbelstenen niet wat onnodig?");
+    return;
+  }
+}
+
+// returns a number based on the size of the die
+function rollDie(size) {
+  return Math.floor(Math.random() * size) + 1;
 }
 
 function redditPostToEmbed(post) {
