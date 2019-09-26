@@ -95,17 +95,18 @@ async function sub(arguments, message) {
 }
 
 function dice(arguments, message) {
+  client.user.setActivity("with dice")
   let args = arguments;
   let size = args[0];
   let maxSize = 10;
   let amount = args[1];
 
   if (!amount) {
-    rollDie(size);
+    message.reply(rollDie(size));
     return;
   } else if (amount <= maxSize) {
     for (let i = 0; i < amount; i++) {
-      rollDie(size);
+      message.reply(rollDie(size));
     }
     return;
   } else {
@@ -119,11 +120,10 @@ function rollDie(size) {
   let roll = Math.floor(Math.random() * size) + 1;
 
   if (roll == size || roll == 1) {
-    message.reply("Natural " + roll + "!");
+    return ("Natural " + roll + "!");
   } else {
-    message.reply(roll);
+    return (roll);
   }
-  return;
 }
 
 function redditPostToEmbed(post) {
