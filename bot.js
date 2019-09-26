@@ -97,6 +97,7 @@ async function sub(arguments, message) {
 }
 
 function dice(arguments, message) {
+  let args = arguments;
   let size = args[0];
   let maxSize = 10;
   let amount = args[1];
