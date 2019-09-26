@@ -104,14 +104,16 @@ function dice(arguments, message) {
   if (!amount) {
     message.reply(rollDie(size));
     return;
-  } else if (amount <= maxSize) {
+  } else if (amount <= maxSize && amount > 0 && size > 0) {
     for (let i = 0; i < amount; i++) {
       message.reply(rollDie(size));
     }
     return;
-  } else {
+  } else if (amount > maxSize) {
     message.reply("vind je meer dan " + maxSize + " dobbelstenen niet wat onnodig?");
     return;
+  } else {
+    message.reply("doe lekker zelf, wijsneus");
   }
 }
 
