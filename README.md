@@ -8,4 +8,9 @@ Simple HosselsBot (WIP)
 !ping
 
 ## Reddit
-!sub 'subreddit' 'amount'
+!sub 'subreddit'
+
+###### TO DO:
+ - Github implementation
+ - clean up
+ - Pick random name
