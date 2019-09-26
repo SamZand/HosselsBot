@@ -101,11 +101,11 @@ function dice(arguments, message) {
   let amount = args[1];
 
   if (!amount) {
-    message.reply(rollDie(size));
+    rollDie(size);
     return;
   } else if (amount <= maxSize) {
     for (let i = 0; i < amount; i++) {
-      message.reply(rollDie(size));
+      rollDie(size);
     }
     return;
   } else {
@@ -116,7 +116,14 @@ function dice(arguments, message) {
 
 // returns a number based on the size of the die
 function rollDie(size) {
-  return Math.floor(Math.random() * size) + 1;
+  let roll = Math.floor(Math.random() * size) + 1;
+
+  if (roll == size || roll == 1) {
+    message.reply("Natural " + roll + "!");
+  } else {
+    message.reply(roll);
+  }
+  return;
 }
 
 function redditPostToEmbed(post) {
