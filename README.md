@@ -14,3 +14,4 @@ Simple HosselsBot (WIP)
  - Github implementation
  - clean up
  - Pick random name
+ - !commands

@@ -168,8 +168,8 @@ function redditPostToEmbed(post) {
     },
     color: 16729344,
     footer: {
-      text: "Reddit Bot by Fosscord Team",
-      icon_url: "https://raw.githubusercontent.com/fosscord/assets/master/PNG/1024x/cord-blue.png"
+      text: "HosselsBot by Kevin and Sam",
+      icon_url: "https://i.imgur.com/Kbw3iEo.png"
     },
     "fields": [{
         "name": `${client.emojis.find(x => x.name === 'upvote')} Upvoted by`,
